@@ -11,19 +11,19 @@ let shipCapacity = 4;
 $(document).ready(function () {
   contents[0].style.display = "block";
 
-  radio.forEach(function (currentValue) {
+  radio.forEach((currentValue) => {
     currentValue.addEventListener("click", changeShip);
   });
 
-  menus.forEach(function (currentValue) {
+  menus.forEach((currentValue) => {
     currentValue.addEventListener("click", showPage);
   });
 
-  crew.forEach(function (currentValue) {
+  crew.forEach((currentValue) => {
     currentValue.style.display = "none";
   });
 
-  check.forEach(function (currentValue) {
+  check.forEach((currentValue) => {
     currentValue.addEventListener("change", changeCrew);
     currentValue.checked = false;
   });
@@ -36,7 +36,7 @@ function showPage() {
   this.classList.add("navimg-clicked");
 
   let ind = Array.prototype.indexOf.call(menus, this);
-  contents.forEach(function (currentValue) {
+  contents.forEach((currentValue) => {
     currentValue.style.display = "none";
   });
   contents[ind].style.display = "block";
@@ -112,7 +112,7 @@ class TeamMember {
 function TeamBuilding() {
   let i = 0;
   CurrentTeam = new Map();
-  check.forEach(function (currentValue) {
+  check.forEach((currentValue) => {
     if (currentValue.checked) {
       let tempname = currentValue.id;
       let temprole = currentValue.name;
@@ -121,5 +121,4 @@ function TeamBuilding() {
       i += 1;
     }
   });
-  console.log(CurrentTeam);
 }
